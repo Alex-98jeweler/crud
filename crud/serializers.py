@@ -2,7 +2,8 @@ import io
 from rest_framework import serializers
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from crud.models import CategoriesOfProducts
+
+from .models import *
 
 
 # class CategoriesModel:
@@ -11,20 +12,22 @@ from crud.models import CategoriesOfProducts
 #         self.name = name
 #         self.seq = seq
 
-class CategoriesSerializer(serializers.Serializer):
-    name = serializers.CharField(max_length=255)
-    seq = serializers.IntegerField()
+class CategoriesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CategoriesOfProducts
+        fields = "__all__"
 
-    def create(self, validated_data):
-        return CategoriesOfProducts.objects.create(**validated_data)
 
-    def update(self, instance, validated_data):
-        instance.name = validated_data.get('name', instance.name)
-        instance.seq = validated_data.get('seq', instance.seq)
-        instance.save()
-        return instance
-    
-
+class GroupsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GroupsOfProducts
+        fields = "__all__"
+  
+class ProductsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Products
+        fields = "__all__"
+  
 
 # def encode():
 #     model = CategoriesModel('Piska', 5)
