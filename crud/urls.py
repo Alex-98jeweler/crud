@@ -14,10 +14,8 @@ groups_router.register(r'product-groups', GroupsViewSet)
 urlpatterns = [
     path('api/v1/', include(categories_router.urls)),
     path('api/v1/', include(groups_router.urls)),
-    path('api/v1/products/', ProductsViewSet.as_view({'get':'list', 'post':'create'})),
-    
-
-
-    # path('product-categories', CategoriesViewSet.as_view({'get':'list', 'post': 'create'})),
-    # path('product-categories/<int:pk>', CategoriesViewSet.as_view({'put': 'update', 'delete': 'destroy'}))
+    path('api/v1/products/', ProductsViewSet.as_view({
+                                                        'get': 'list',
+                                                        'post': 'create'
+                                                    })),
 ]
