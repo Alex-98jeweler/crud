@@ -1,8 +1,6 @@
-from email.policy import default
 from django.db import models
 import uuid
 
-# Create your models here.
 
 class CategoriesOfProducts(models.Model):
     name = models.CharField(max_length=100)
@@ -17,12 +15,12 @@ class GroupsOfProducts(models.Model):
     category_id = models.ForeignKey(CategoriesOfProducts, on_delete=models.PROTECT)
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
-    seq = models.IntegerField(unique=True, auto_created=True)
+    seq = models.IntegerField(unique=True)
 
     def __str__(self) -> str:
         return self.title
 
-    
+     
 class Products(models.Model):
     group_id = models.ForeignKey(GroupsOfProducts, on_delete=models.PROTECT)
     name = models.CharField(max_length=50)
