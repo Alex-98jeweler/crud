@@ -3,23 +3,32 @@ from django.shortcuts import render
 from rest_framework import generics, viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.pagination import PageNumberPagination
+
 from .models import *
 from .serializers import *
-# Create your views here.
 
+
+class Pagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_per'
+    max_page_size = 100
 
 
 class CategoriesViewSet(viewsets.ModelViewSet):
     queryset = CategoriesOfProducts.objects.all()
     serializer_class = CategoriesSerializer
+    pagination_class = Pagination
 
 class GroupsViewSet(viewsets.ModelViewSet):
     queryset = GroupsOfProducts.objects.all()
     serializer_class = GroupsSerializer
+    pagination_class = Pagination
 
 class ProductsViewSet(viewsets.ModelViewSet):
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
+    pagination_class = Pagination
 
 
 # class CalegoriesList(generics.ListCreateAPIView):
