@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'crud.middleware.Process500'
+    'crud.middleware.Process400'
 ]
 
 ROOT_URLCONF = 'crud_service.urls'

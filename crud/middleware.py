@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 
 
-class Process500:
+class Process400:
     def __init__(self, get_response) -> None:
         self._get_response = get_response
 
