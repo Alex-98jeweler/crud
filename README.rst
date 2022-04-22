@@ -17,11 +17,13 @@ Name of Database should be "Products".
 When a database is created, clone this repo by method, which is comfortable for you also you have to make a new .sh file describing environment variables. Enter command:
 
 .. code-block::
+
     touch setenv.sh
 
 Fill setenv.sh file the following content:
 
 .. code-block::
+    
     export DATABASE_NAME="name of your databes(I recommend products)"
     export DATABASE_USER="user name"
     export DATABASE_PASS="password"
