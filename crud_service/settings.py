@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'crud.middleware.Process400'
 ]
 
 ROOT_URLCONF = 'crud_service.urls'
@@ -85,6 +86,7 @@ DATABASES = {
         'PASSWORD': os.getenv("DATABASE_PASS"),
         'HOST': os.getenv("DATABASE_HOST"),
         'PORT': os.getenv("DATABASE_PORT"),
+        'ATOMIC_REQUESTS': True,
     }
 }
 

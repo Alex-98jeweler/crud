@@ -2,7 +2,10 @@
 
 def get_max(model):
     it = model.objects.all()
-    max_seq = max([i.seq for i in it])
+    try:
+        max_seq = max([i.seq for i in it])
+    except ValueError:
+        max_seq = 0
     return max_seq
 
 
