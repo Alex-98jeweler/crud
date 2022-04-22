@@ -51,9 +51,4 @@ You've done neccessary steps, and now you can run app. Enter a command:
 
     make run
 
-
-
-
-
-
-
+For testing API I used Postman, you can use other softs.

@@ -22,7 +22,7 @@ class CategoriesViewSet(viewsets.ModelViewSet):
     serializer_class = CategoriesSerializer
     pagination_class = Pagination
 
-
+    
 class GroupsViewSet(viewsets.ModelViewSet):
     queryset = GroupsOfProducts.objects.all()
     serializer_class = GroupsSerializer
