@@ -23,7 +23,7 @@ When a database is created, clone this repo by method, which is comfortable for 
 Fill setenv.sh file the following content:
 
 .. code-block::
-    
+
     export DATABASE_NAME="name of your databes(I recommend products)"
     export DATABASE_USER="user name"
     export DATABASE_PASS="password"
@@ -33,7 +33,27 @@ Fill setenv.sh file the following content:
 
 I hope you've created database and setenv.sh file. It is so neccessary for correct work.
 
+Run command for configure project:
+
 .. code-block::
-    source ./setenv.sh
+
+    make configure
+
+Command for creating database tables:
+
+.. code-block::
+
+    make migrations
+
+You've done neccessary steps, and now you can run app. Enter a command:
+
+.. code-block::
+
+    make run
+
+
+
+
+
 
 
